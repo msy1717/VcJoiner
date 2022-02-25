@@ -253,18 +253,18 @@ while True:
             acc_name = c.get_me().first_name
             
             try:
-                result = client.invoke(functions.phone.JoinGroupCallRequest(
-                    call=types.InputGroupCall(id=-1001206327449,access_hash=0, ),join_as='ruhi',params=types.DataJSON(data='sed'
-                 ),
-                muted=True,
-                video_stopped=True,
-                ))
+                #result = client.invoke(functions.phone.JoinGroupCallRequest(
+                  #  call=types.InputGroupCall(id=-1001206327449,access_hash=0, ),join_as='ruhi',params=types.DataJSON(data='sed'
+                 #),
+                #muted=True,
+               # video_stopped=True,
+                #))
 
 
 
-                #group_call_factory = GroupCallFactory(client, GroupCallFactory.MTPROTO_CLIENT_TYPE.TELETHON)
-                #group_call = group_call_factory.get_file_group_call('input.raw')
-                #group_call.start(chat)
+                group_call_factory = GroupCallFactory(client, GroupCallFactory.MTPROTO_CLIENT_TYPE.TELETHON)
+                group_call = group_call_factory.get_file_group_call('input.raw')
+                group_call.start(chat)
                 print('vc join sucess')
             except Exception as e:
                 print('{e}')
